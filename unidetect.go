@@ -4,8 +4,8 @@ import (
 	"unicode"
 )
 
-// DetectScripts detects the Unicode scripts in the input string.
-func DetectScripts(s string) (scripts []string) {
+// Scripts detects the Unicode scripts in the input string.
+func Scripts(s string) (scripts []string) {
 	set := make(map[string]bool)
 	for _, r := range s {
 		for script, rangeTable := range unicode.Scripts {

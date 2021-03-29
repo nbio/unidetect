@@ -8,7 +8,7 @@ import (
 
 var w = strings.Fields
 
-func TestDetectScripts(t *testing.T) {
+func TestDetect(t *testing.T) {
 	tests := []struct {
 		s    string
 		want []string
@@ -33,7 +33,7 @@ func TestDetectScripts(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.s, func(t *testing.T) {
-			got := DetectScripts(tt.s)
+			got := Scripts(tt.s)
 			if !reflect.DeepEqual(tt.want, got) {
 				t.Errorf("DetectScripts(%v) = %v, want %v", tt.s, got, tt.want)
 			}
