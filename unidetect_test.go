@@ -13,7 +13,9 @@ func TestDetect(t *testing.T) {
 		s    string
 		want []string
 	}{
-		{"abc", w(`Latin`)},
+		{"0123456789", w(`Common`)},
+		{"-", w(`Common`)},
+		{"abcdefghijklmnopqrstuvwxyz", w(`Latin`)},
 		{"北京", w(`Han`)},
 		{"北京beijing", w(`Han Latin`)},
 		{"⠋⠗", w(`Braille`)},
